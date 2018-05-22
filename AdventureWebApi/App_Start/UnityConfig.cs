@@ -1,6 +1,8 @@
 using Adventure.Repository;
 using Adventure.Repository.Entity;
 using Adventure.Repository.Interfaces;
+using AdventureWebApi.Interfaces;
+using AdventureWebApi.Services;
 using System.Data.Entity.Infrastructure;
 using System.Web.Http;
 using Unity;
@@ -14,8 +16,9 @@ namespace AdventureWebApi
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
-
-             // Register entities/context.
+            // Register all services.
+            container.RegisterType<ICustomerService, CustomerService>();
+            // Register entities/context.
             container.RegisterType<IObjectContextAdapter, adventureDevEntities>(new PerThreadLifetimeManager());
 
             // Register Unit of work.
