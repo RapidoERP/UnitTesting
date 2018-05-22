@@ -17,7 +17,7 @@ namespace Adventure.Repository.Interfaces
         /// </summary>
         /// <param name="id">The identifier of instance that needs to be returned.</param>
         /// <returns>The found instance of <see cref="Customer"/>.</returns>
-        Customer GetById(Guid id);
+        Customer GetById(int id);
 
         /// <summary>
         /// Adds/stores a new instance of <see cref="Customer"/>.
@@ -35,6 +35,6 @@ namespace Adventure.Repository.Interfaces
         /// Detelte an instance of <see cref="Customer"/> by its identifier.
         /// </summary>
         /// <param name="id">The identifier of the instance that needs to be deleted.</param>
-        void Delete(Guid id);
+        void Delete(int id);
     }
 }

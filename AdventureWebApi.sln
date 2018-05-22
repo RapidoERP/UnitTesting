@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWebApi", "Adventur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventure.Repository", "Adventure.Repository\Adventure.Repository.csproj", "{3BD0E84B-C89B-4703-9E6E-0BDBF1299B51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventure.API.Model", "Adventure.API.Model\Adventure.API.Model.csproj", "{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3BD0E84B-C89B-4703-9E6E-0BDBF1299B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BD0E84B-C89B-4703-9E6E-0BDBF1299B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BD0E84B-C89B-4703-9E6E-0BDBF1299B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

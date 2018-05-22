@@ -56,18 +56,24 @@ namespace Adventure.Repository
         {
             try
             {
-                //var local = _context.Customers.SingleOrDefault(c => c.Id == customer.Id);
+                var local = _context.Customers.SingleOrDefault(c => c.CustomerID == customer.CustomerID);
                 if (customer != null)
                 {
-                    //local.Name = customer.Name;
-                    //local.Active = customer.Active;
-                    //local.CustomerName = customer.CustomerName;
-                    //local.OfficialName = customer.OfficialName;
-                    //local.ReportingLanguage = customer.ReportingLanguage;
-                    //local.SubscriptionId = customer.SubscriptionId;
-                    //local.Type = customer.Type;
-
-                    //_context.Entry(local).State = EntityState.Modified;
+                    local.CompanyName = customer.CompanyName;
+                    local.CustomerAddresses = customer.CustomerAddresses;
+                    local.EmailAddress = customer.EmailAddress;
+                    local.FirstName = customer.FirstName;
+                    local.LastName = customer.LastName;
+                    local.MiddleName = customer.MiddleName;
+                    local.ModifiedDate = customer.ModifiedDate;
+                    local.NameStyle = customer.NameStyle;
+                    local.PasswordHash = customer.PasswordHash;
+                    local.PasswordSalt = customer.PasswordSalt;
+                    local.Phone = customer.Phone;
+                    local.rowguid = customer.rowguid == Guid.Empty ? Guid.NewGuid() : customer.rowguid;
+                    local.Suffix = customer.Suffix;
+                    local.Title = customer.Title;
+                    _context.Entry(local).State = EntityState.Modified;
                 }
             }
             catch (Exception ex)
@@ -77,42 +83,25 @@ namespace Adventure.Repository
         }
 
         /// <inheritdoc />
-        public void Delete(Guid customerId)
+        public void Delete(int customerId)
         {
             try
             {
-                //var customerEntity =
-                //    _context
-                //    .Customers
-                //        .SingleOrDefault(customer => customer.Id == customerId);
+                var customerEntity =
+                    _context
+                    .Customers
+                        .SingleOrDefault(customer => customer.CustomerID == customerId);
 
-                //if (customerEntity != null)
-                //{
-                    //_context
-                    //    .Customers
-                    //    .Local
-                    //        .Where(customer => customer.Id == customerId &&
-                    //              (customer.AdditionalServices == null ||
-                    //               customer.Contacts == null ||
-                    //               customer.CustomerTypes == null ||
-                    //               customer.CustomerTeamMembers == null ||
-                    //               customer.CustomerTypes == null ||
-                    //               customer.Services == null ||
-                    //               customer.Tests == null ||
-                    //               customer.TestObjects == null
-                    //              ))
-                    //    .ToList()
-                    //    .ForEach(customer =>
-                    //        _context.Customers.Remove(customer));
-
-                //    _context.Customers.Remove(customerEntity);
-                //}
-                //else
-                //{
-                //    {
-                //        throw new ArgumentException("Record doesn't exist");
-                //    }
-                //}
+                if (customerEntity != null)
+                {
+                    _context.Customers.Remove(customerEntity);
+                }
+                else
+                {
+                    {
+                        throw new ArgumentException("Record doesn't exist");
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -121,9 +110,9 @@ namespace Adventure.Repository
         }
 
         /// <inheritdoc />
-        public Customer GetById(Guid id)
+        public Customer GetById(int id)
         {
-            return _context.Customers.SingleOrDefault(customer => customer.rowguid == id);
+            return _context.Customers.SingleOrDefault(customer => customer.CustomerID == id);
         }
         #endregion
     }
