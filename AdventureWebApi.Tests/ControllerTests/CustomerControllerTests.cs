@@ -1,17 +1,18 @@
-﻿using AdventureWebApi.Controllers;
+﻿using Adventure.API.Model;
+using AdventureWebApi.Controllers;
 using AdventureWebApi.Interfaces;
+using AutoMapper;
 using Moq;
-using Xunit;
-using System.Web.Http;
-using System.Web.Http.Results;
-using Adventure.API.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using System.Web.Http;
+using System.Web.Http.Results;
+using Xunit;
 
 namespace AdventureWebApi.Tests.ControllerTests
 {
-    
+
     public class CustomerControllerTests : IDisposable
     {
         #region Members
@@ -31,7 +32,7 @@ namespace AdventureWebApi.Tests.ControllerTests
         }
         public void Dispose()
         {
-           
+            Mapper.Reset();
         }
 
         [Fact]
