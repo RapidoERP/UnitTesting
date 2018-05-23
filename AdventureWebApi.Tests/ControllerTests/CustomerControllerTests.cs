@@ -53,6 +53,7 @@ namespace AdventureWebApi.Tests.ControllerTests
             var okNegotiateResult = result as OkNegotiatedContentResult<IEnumerable<CustomerModel>>;
 
             //Assert
+            Assert.Single(okNegotiateResult.Content);
             _customerService.Verify(service => service.GetCustomers(), Times.Once);
             Assert.NotNull(okNegotiateResult.Content.Single(customer => customer.CustomerID == customerId));
         }
@@ -61,17 +62,18 @@ namespace AdventureWebApi.Tests.ControllerTests
         [InlineData(12)]
         public void Get_Customers(int number)
         {
+            //Arrange
             _customerService
                 .Setup(service => service.GetCustomer(number))
                 .Returns(new CustomerModel
                 {
                     CustomerID = 12
                 });
+            //Act
             IHttpActionResult result = _customersController.Get(number);
             var okNegotiateResult = result as OkNegotiatedContentResult<CustomerModel>;
 
-            // Assert.Equal(1,okNegotiateResult.Content.Count());
-
+            //Assert
             Assert.Equal(number, okNegotiateResult.Content.CustomerID);
         }
         
