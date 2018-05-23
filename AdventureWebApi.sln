@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventure.Repository", "Adv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventure.API.Model", "Adventure.API.Model\Adventure.API.Model.csproj", "{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWebApi.Tests", "AdventureWebApi.Tests\AdventureWebApi.Tests.csproj", "{921166C9-A970-45CC-9270-5BD7454C4D7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B56F68F0-5BE9-4A7A-B39F-460A9E22E784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921166C9-A970-45CC-9270-5BD7454C4D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921166C9-A970-45CC-9270-5BD7454C4D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921166C9-A970-45CC-9270-5BD7454C4D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921166C9-A970-45CC-9270-5BD7454C4D7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
